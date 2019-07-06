@@ -13,5 +13,13 @@ pipeline {
           }
         }
       }
+      
+      stage('test') {
+        steps {
+          withMaven(maven: 'maven') {
+            sh 'mvn test' 
+          }
+        }
+      }
     }  
 }
