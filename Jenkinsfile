@@ -1,8 +1,8 @@
 pipeline {
   agent any 
     stages {
-      stage('build') {
-        echo "build stage"
+      stage('clone code') {
+        git https://github.com/amolmane123/maven-project.git'
       }
     }  
 }
