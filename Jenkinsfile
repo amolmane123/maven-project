@@ -30,5 +30,12 @@ pipeline {
         }
       }
       
+      stage('install') {
+        steps {
+          withMaven(maven: 'maven') {
+            sh 'mvn install' 
+          }
+        }
+      }
     }  
 }
