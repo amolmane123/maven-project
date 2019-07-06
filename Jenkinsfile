@@ -21,5 +21,14 @@ pipeline {
           }
         }
       }
+      
+      stage('package') {
+        steps {
+          withMaven(maven: 'maven') {
+            sh 'mvn package' 
+          }
+        }
+      }
+      
     }  
 }
