@@ -1,0 +1,12 @@
+pipeline {
+  agent any
+  
+  stages {
+    stage('deploy to tomcat') {
+      steps {
+        sshagent(['test_user']) {
+          sh 'scp -o StrictHostKeyChecking=no **/*.war -i ec2-user@13.233.123.36:/usr/share/tomcat/webapp'
+        }
+      }    
+  }
+}
