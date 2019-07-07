@@ -2,6 +2,7 @@ pipeline {
   agent any 
     stages {
       stage('clone code'){
+        agent{label 'maven, '}
         steps {
         git 'https://github.com/amolmane123/maven-project.git'
         }
